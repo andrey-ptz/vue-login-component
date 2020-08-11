@@ -283,13 +283,4 @@ export default {
 
 	.theme--light.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text)
 		background-color: #cfd8dc !important
-
-	.custom-title
-		margin-top: 90px
-		position: fixed
-		max-width: 500px
-		z-index: 2
-
-	.custom-content
-		margin-top: 170px
 </style>

@@ -121,12 +121,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-	.custom-title
-		margin-top: 90px
-		position: fixed
-		max-width: 500px
-		z-index: 2
 
-	.custom-content
-		margin-top: 170px
 </style>

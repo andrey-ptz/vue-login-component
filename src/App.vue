@@ -1,6 +1,16 @@
 <template>
   <v-app>
+		<Navbar 
+			:username="'user123'"
+			:technicalWorkMessage="'Ведутся технические работы'"
+			@contacts="contactsDialog=$event"
+			@help="helpDialog=$event"
+			@logout="logout"
+		/>
+
 		<v-content class="background px-4 pb-4">
+			<Contacts :dialog="contactsDialog" @contacts="contactsDialog=$event" />
+			<Help :dialog="helpDialog" @help="helpDialog=$event" />
       <router-view @login="setParams" :userId="userId" :key="$route.path"></router-view>
     </v-content>
   </v-app>
@@ -9,8 +19,18 @@
 <script>
 import securityRepository from '@/repositories/securityRepository';
 
+import Navbar from "@/components/Navbar";
+import Contacts from "@/components/dialogs/ContactsDialog";
+import Help from "@/components/dialogs/HelpDialog";
+
 export default {
-  name: 'App',
+	name: 'App',
+	
+	components: {
+		Navbar,
+		Contacts,
+		Help
+	},
 
 	created() {
 		if (this.$route.name !== 'login' && this.$route.name !== 'registration' 
